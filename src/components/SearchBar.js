@@ -1,9 +1,11 @@
 import React from "react";
 
 class SearchBar extends React.Component {
-  state = {
+
+ /*  state = {
     searchText: "",
-  };
+  }; */
+    
     handleSubmit = (event) => {
       event.preventDefault()
   }
@@ -13,15 +15,11 @@ class SearchBar extends React.Component {
         <div className="form-row mb-5">
           <div className="col-12 mt-2">
             <input
-              onChange={(event) => {
-                this.setState({
-                  searchText: event.currentTarget.value,
-                });
-                console.log(this.state.searchText);
-              }}
+              onChange={this.props.searchMovieProp}
               type="text"
               className="form-control"
               placeholder="Search a movie"
+              onFocus={(e) => e.currentTarget.select()}
             />
           </div>
         </div>
